@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+        }
+
+        .mdc-list {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .mdc-drawer__header {
+            padding: 10px;
+        }
+
+        .mdc-list-item {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+        }
+
+        .mdc-list-item__text {
+            padding-left: 10px;
+        }
+
+        .mdc-drawer {
+            border-right-color: rgba(0, 0, 0, .12);
+            border-right-style: solid;
+            width: 10%;
+        }
+    </style>
+</head>
+<body>
+<aside class="mdc-drawer">
+    <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">e-shop</h3>
+        <h6 class="mdc-drawer__subtitle">Java + Spring</h6>
+    </div>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <a class="mdc-list-item" href="/user/">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                <span class="mdc-list-item__text">Users</span>
+            </a>
+        </nav>
+    </div>
+</aside>
+<div style="display: flex; flex-direction: column; width: 100%; overflow: auto">
+    <h1 style="margin: 10px;" th:text="${user.databaseId}"></h1>
+    <ul class="demo-list-item mdl-list">
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <a th:href="@{'/user/add/' + ${user.databaseId} + '/addHouseHoldInsurance'}" th:text="'Add HouseHold Insurance'"></a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <a th:href="@{'/user/add/' + ${user.databaseId} + '/addHouseInsurance'}" th:text="'Add House Insurance'"></a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <a th:href="@{'/user/add/' + ${user.databaseId} + '/addInjuryInsurance'}" th:text="'Add Injury Insurance'"></a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <a th:href="@{'/user/add/' + ${user.databaseId} + '/addTravelInsurance'}" th:text="'Add Travel Insurance'"></a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <a th:href="@{'/user/add/' + ${user.databaseId} + '/edit'}" th:text="'Edit User'"></a>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>First Name:&nbsp;</span>
+                <span th:text="${user.name.first}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Second Name:&nbsp;</span>
+                <span th:text="${user.name.second}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Birth ID:&nbsp;</span>
+                <span th:text="${user.birthId}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Email:&nbsp;</span>
+                <span th:text="${user.email}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Permanent address - postal code:&nbsp;</span>
+                <span th:text="${user.address.permanent.postalCode}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Permanent address - municipal name:&nbsp;</span>
+                <span th:text="${user.address.permanent.municipalName}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Permanent address - street name:&nbsp;</span>
+                <span th:text="${user.address.permanent.streetName}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Permanent address - house number:&nbsp;</span>
+                <span th:text="${user.address.permanent.houseNumber}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Postal address - postal code:&nbsp;</span>
+                <span th:text="${user.address.postal.postalCode}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Postal address - Municipal name:&nbsp;</span>
+                <span th:text="${user.address.postal.municipalName}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Postal address - street name:&nbsp;</span>
+                <span th:text="${user.address.postal.streetName}"></span>
+            </span>
+        </li>
+        <li class="mdl-list__item">
+            <span class="mdl-list__item-primary-content">
+                <span>Postal address - house number:&nbsp;</span>
+                <span th:text="${user.address.postal.houseNumber}"></span>
+            </span>
+        </li>
+    </ul>
+
+    <table>
+        <span>Contracts for user:</span>
+        <tr th:each="contract: ${contracts}">
+            <td th:text="'id: ' + ${contract.id}" />
+            <td th:text="'formation date: ' + ${contract.contractFormationDate}" />
+            <td th:text="'insurance start: ' + ${contract.startOfInsurance} " />
+            <td th:text="'insurance end: ' + ${contract.endOfInsurance} " />
+            <td th:text="'monthly payment: ' + ${contract.monthlyPayment} " />
+
+            <td>
+            <a th:if="${contract.class.name == 'com.domain.HouseHoldInsurance'}" th:href="@{ '/user/add/' + ${user.databaseId} + '/addHouseHold/' + ${contract.id} }"> Info</a>
+            </td>
+            <td>
+                <a th:if="${contract.class.name == 'com.domain.HouseInsurance'}" th:href="@{ '/user/add/' + ${user.databaseId} + '/addHouse/' + ${contract.id} }"> Info</a>
+            </td>
+            <td>
+                <a th:if="${contract.class.name == 'com.domain.InjuryInsurance'}" th:href="@{ '/user/add/' + ${user.databaseId} + '/addInjury/' + ${contract.id} }"> Info</a>
+            </td>
+            <td>
+                <a th:if="${contract.class.name == 'com.domain.TravelInsurance'}" th:href="@{ '/user/add/' + ${user.databaseId} + '/addTravel/' + ${contract.id} }"> Info</a>
+            </td>
+        </tr>
+    </table>
+
+</div>
+</body>
+</html>

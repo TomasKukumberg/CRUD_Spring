@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" >
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.3.0/material.indigo-orange.min.css">
+    <script defer src="https://code.getmdl.io/1.3.0/material.min.js"></script>
+    <style>
+        body {
+            display: flex;
+            height: 100vh;
+        }
+        .mdc-list {
+            display: flex;
+            flex-direction: column;
+        }
+        .mdc-drawer__header {
+            padding: 10px;
+        }
+        .mdc-list-item {
+            padding: 10px;
+            display: flex;
+            flex-direction: row;
+            text-decoration: none;
+        }
+        .mdc-list-item__text {
+            padding-left: 10px;
+        }
+        .mdc-drawer {
+            border-right-color: rgba(0,0,0,.12);
+            border-right-style: solid;
+            width: 10%;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+<aside class="mdc-drawer">
+    <div class="mdc-drawer__header">
+        <h3 class="mdc-drawer__title">e-shop</h3>
+        <h6 class="mdc-drawer__subtitle">Java + Spring</h6>
+    </div>
+    <div class="mdc-drawer__content">
+        <nav class="mdc-list">
+            <a class="mdc-list-item" href="/user/">
+                <i class="material-icons mdc-list-item__graphic" aria-hidden="true">drafts</i>
+                <span class="mdc-list-item__text">Users</span>
+            </a>
+        </nav>
+    </div>
+</aside>
+<div style="display: flex; flex-direction: column; width: 100%; overflow: auto">
+    <h1 style="margin: 10px;">Add User</h1>
+    <form action="#" th:action="@{/user/add}" th:object="${user}" method="post">
+       <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="first-name" th:field="*{name.first}" />
+           <label class="mdl-textfield__label" for="first-name">First Name</label>
+       </div>
+       <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="second-name" th:field="*{name.second}" />
+           <label class="mdl-textfield__label" for="second-name">Second Name</label>
+       </div>
+       <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="birth-id" th:field="*{birthId}" />
+           <label class="mdl-textfield__label" for="birth-id">Birth ID</label>
+       </div>
+       <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" type="text" id="email" th:field="*{email}" />
+           <label class="mdl-textfield__label" for="email">Email</label>
+       </div>
+       <div class="mdl-textfield mdl-js-textfield">
+           <input class="mdl-textfield__input" value="" type="number" id="perm-address-code" th:field="*{address.permanent.postalCode}" />
+           <label class="mdl-textfield__label" for="perm-address-code">Permanent address - postal code</label>
+       </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="text" id="perm-address-municipal" th:field="*{address.permanent.municipalName}" />
+            <label class="mdl-textfield__label" for="perm-address-municipal">Permanent address - Municipal Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="text" id="perm-address-street" th:field="*{address.permanent.streetName}" />
+            <label class="mdl-textfield__label" for="perm-address-street">Permanent address - Street Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="text" id="perm-address-house" th:field="*{address.permanent.houseNumber}" />
+            <label class="mdl-textfield__label" for="perm-address-house">Permanent address - House Number</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="number" id="post-address-code" th:field="*{address.postal.postalCode}" />
+            <label class="mdl-textfield__label" for="post-address-code">Postal address - Postal Code</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="text" id="post-address-municipal" th:field="*{address.postal.municipalName}" />
+            <label class="mdl-textfield__label" for="post-address-municipal">Postal address - Municipal Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="text" id="post-address-street" th:field="*{address.postal.streetName}" />
+            <label class="mdl-textfield__label" for="post-address-street">Postal address - Street Name</label>
+        </div>
+        <div class="mdl-textfield mdl-js-textfield">
+            <input class="mdl-textfield__input" value="" type="number" id="post-address-house" th:field="*{address.postal.houseNumber}" />
+            <label class="mdl-textfield__label" for="post-address-house">Postal address - House Number</label>
+        </div>
+       <input type="submit" value="Submit" class="mdl-button mdl-js-button mdl-button--raised" style="width: fit-content;"/>
+   </form>
+</div>
+</body>
+</html>
+
