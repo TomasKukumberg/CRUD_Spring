@@ -7,7 +7,7 @@ IDE: Intellij IDEA
 
 Dependencies: Lombok, Spring boot
 
-## Preview:
+## Preview
 
 **Adding a user to the database:**
 
