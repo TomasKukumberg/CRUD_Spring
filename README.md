@@ -3,6 +3,8 @@ Web app to create, read, update and delete users and their insurance forms.
 
 Made with Spring boot, Java, Thymeleaf (Java XML/XHTML/HTML5 template engine), HTML and CSS.
 
+Build automation tool: Maven
+
 IDE: Intellij IDEA
 
 Dependencies: Lombok, Spring boot
