@@ -1,7 +1,7 @@
 # CRUD Spring Boot Web App
 Web app to create, read, update and delete users and their insurance forms. 
 
-Made with Spring boot, Java, Thymeleaf (Java XML/XHTML/HTML5 template engine), HTML and CSS.
+Made with Spring boot, Java SE 8, Thymeleaf (Java XML/XHTML/HTML5 template engine), HTML and CSS.
 
 Build automation tool: Maven
 
